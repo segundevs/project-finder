@@ -32,7 +32,7 @@ const handler = async (req, res) => {
           res.status(200).json({ success: true, message: "project deleted" });
         } else {
           res.status(401).json({
-            status: false,
+            success: false,
             message:
               "You are not authorized to modify this project. Please provide a valid key",
           });
@@ -57,7 +57,7 @@ const handler = async (req, res) => {
           res.status(200).json({ success: true, newProject });
         } else {
           res.status(401).json({
-            status: false,
+            success: false,
             message:
               "You are not authorized to modify this project. Please provide a valid key",
           });
