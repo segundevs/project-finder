@@ -10,9 +10,8 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1 className="text-red-500 text-2xl">Hello from Project Finder</h1>
+        <h1 className="text-2xl">Hello from Project Finder</h1>
       </main>
     </div>
   );
 }
-
