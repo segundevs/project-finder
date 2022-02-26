@@ -13,7 +13,6 @@ const handler = async (req, res) => {
         res.status(200).json({ success: true, projects });
       } catch (err) {
         res.status(400).json(err.message);
-        console.log(err.message);
       }
       break;
     case "POST":
@@ -22,7 +21,6 @@ const handler = async (req, res) => {
         res.status(201).json({ success: true, project });
       } catch (err) {
         res.status(400).json(err.message);
-        console.log(err.message);
       }
       break;
 

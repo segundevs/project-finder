@@ -12,13 +12,12 @@ const handler = async (req, res) => {
         const project = await Project.findById(id);
         if (!project) {
           res
-            .status(400)
+            .status(404)
             .json({ success: false, message: "This project does not exist" });
         }
         res.status(200).json({ success: true, project });
       } catch (err) {
         res.status(400).json(err.message);
-        console.log(err.message);
       }
       break;
 
@@ -39,7 +38,6 @@ const handler = async (req, res) => {
         }
       } catch (err) {
         res.status(400).json(err.message);
-        console.log(err.message);
       }
       break;
 
@@ -64,7 +62,6 @@ const handler = async (req, res) => {
         }
       } catch (err) {
         res.status(400).json(err.message);
-        console.log(err.message);
       }
       break;
 
