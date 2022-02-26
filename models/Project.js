@@ -21,6 +21,12 @@ const ProjectSchema = new mongoose.Schema(
       type: String,
       required: [true, "Please enter the github link to your project"],
     },
+    description: {
+      type: String,
+      required: [true, "Please provide a short description of your project"],
+      minlength: 5,
+      maxlength: 100,
+    },
     key: {
       type: String,
       required: [
