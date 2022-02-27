@@ -1,10 +1,13 @@
 import "../styles/globals.css";
 import DataProvider from "../contexts/DataContext";
+import Layout from "../components/Layout";
 
 function MyApp({ Component, pageProps }) {
   return (
     <DataProvider>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </DataProvider>
   );
 }

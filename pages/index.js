@@ -1,6 +1,8 @@
 import Head from "next/head";
+import axios from "axios";
+import Link from "next/link";
 
-export default function Home() {
+export default function Home({ data }) {
   return (
     <div>
       <Head>
@@ -11,7 +13,28 @@ export default function Home() {
 
       <main>
         <h1 className="text-2xl">Hello from Project Finder</h1>
+        {console.log(data.projects)}
+        <div>
+          {data.projects?.map((project) => (
+            <div key={project._id}>
+              <h2>{project.language}</h2>
+              <Link href={`details/${project._id}`}>
+                <a>{project.title}</a>
+              </Link>
+            </div>
+          ))}
+        </div>
       </main>
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  const res = await axios.get(`${process.env.API_URL}`);
+
+  return {
+    props: {
+      data: res.data,
+    },
+  };
 }
