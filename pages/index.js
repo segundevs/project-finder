@@ -13,12 +13,12 @@ export default function Home({ data }) {
 
       <main>
         <h1 className="text-2xl">Hello from Project Finder</h1>
-        {console.log(data.projects)}
+        {/* {console.log(data.projects)} */}
         <div>
           {data.projects?.map((project) => (
             <div key={project._id}>
               <h2>{project.language}</h2>
-              <Link href={`details/${project._id}`}>
+              <Link href={`/details/${project._id}`}>
                 <a>{project.title}</a>
               </Link>
             </div>

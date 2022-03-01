@@ -4,13 +4,22 @@ import Project from "../../../models/project";
 dbConnect();
 
 const handler = async (req, res) => {
+  const query = req.query;
+
   switch (req.method) {
     case "GET":
       try {
-        const projects = await Project.find({}).sort({
-          updatedAt: 1,
-        });
-        res.status(200).json({ success: true, projects });
+        if (query) {
+          const projects = await Project.find(query).sort({
+            updatedAt: 1,
+          });
+          res.status(200).json({ success: true, projects });
+        } else {
+          const projects = await Project.find({}).sort({
+            updatedAt: 1,
+          });
+          res.status(200).json({ success: true, projects });
+        }
       } catch (err) {
         res.status(400).json(err.message);
       }

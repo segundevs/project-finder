@@ -1,5 +1,5 @@
 {
-  "name": "github-profiles",
+  "name": "project-finder",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^0.26.0",
     "mongoose": "^6.2.3",
     "next": "12.1.0",
     "react": "17.0.2",
